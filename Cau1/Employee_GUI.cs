@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Cau1
 {
-    public partial class Form1 : Form
+    public partial class Employee_GUI : Form
     {
-        public Form1()
+        public Employee_GUI()
         {
             InitializeComponent();
+        }
+
+        private void Employee_GUI_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

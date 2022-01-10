@@ -40,7 +40,7 @@ namespace Cau1
             this.label5 = new System.Windows.Forms.Label();
             this.tbDate = new System.Windows.Forms.DateTimePicker();
             this.tbGender = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvEmployee = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,7 +51,7 @@ namespace Cau1
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -146,20 +146,23 @@ namespace Cau1
             this.tbGender.Text = "Giới tính Nam";
             this.tbGender.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvEmployee.AllowUserToAddRows = false;
+            this.dgvEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(737, 261);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvEmployee.Location = new System.Drawing.Point(13, 92);
+            this.dgvEmployee.Name = "dgvEmployee";
+            this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployee.Size = new System.Drawing.Size(737, 261);
+            this.dgvEmployee.TabIndex = 11;
+            this.dgvEmployee.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_RowEnter);
             // 
             // Column1
             // 
@@ -210,6 +213,7 @@ namespace Cau1
             this.btnExit.TabIndex = 12;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnEdit
             // 
@@ -220,6 +224,7 @@ namespace Cau1
             this.btnEdit.TabIndex = 13;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -230,6 +235,7 @@ namespace Cau1
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnNew
             // 
@@ -240,6 +246,7 @@ namespace Cau1
             this.btnNew.TabIndex = 15;
             this.btnNew.Text = "Thêm";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // Employee_GUI
             // 
@@ -250,7 +257,7 @@ namespace Cau1
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvEmployee);
             this.Controls.Add(this.tbGender);
             this.Controls.Add(this.tbDate);
             this.Controls.Add(this.label5);
@@ -265,7 +272,7 @@ namespace Cau1
             this.Name = "Employee_GUI";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Employee_GUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,7 +291,7 @@ namespace Cau1
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker tbDate;
         private System.Windows.Forms.CheckBox tbGender;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvEmployee;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
